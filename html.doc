@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODFAME CHURCH - UR BLEST | Spiritual Growth & Community Worship</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #d4af37;
+            --accent-color: #f0f9ff;
+            --white-color: #0f172a;
+            --light-gold: #f5f5f5;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0d47a1 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .hero .motto {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 20px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        section .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--accent-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .about-highlight {
+            background: white;
+            padding: 2rem;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.2);
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-time {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* Anointed Section */
+        .anointed-section {
+            background: var(--accent-color);
+            text-align: center;
+        }
+
+        .anointed-profile {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .pastor-profile h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 1rem 0;
+        }
+
+        .pastor-bio {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Sermons Section */
+        .sermons {
+            background: white;
+        }
+
+        .sermon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sermon-card {
+            background: var(--accent-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .sermon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .sermon-thumbnail {
+            background: var(--primary-color);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 3rem;
+        }
+
+        .sermon-info {
+            padding: 1.5rem;
+        }
+
+        .sermon-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .sermon-date {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .sermon-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--accent-color);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Events Section */
+        .events {
+            background: white;
+        }
+
+        .event-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .event-item {
+            background: var(--accent-color);
+            padding: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .event-item:hover {
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.15);
+            transform: translateX(5px);
+        }
+
+        .event-date {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-description {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .contact h2 {
+            color: var(--secondary-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid var(--secondary-color);
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            word-break: break-word;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Social Media Section */
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .social-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .motto {
+                font-size: 1.5rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo">space for image</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#sermons">Sermons</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>GODFAME CHURCH</h1>
+            <div class="motto">✨ UR BLEST ✨</div>
+            <p>A welcoming place for spiritual exploration, prayer, worship, and growth</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Join Us Today</a>
+                <a href="#services" class="btn btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About GODFAME CHURCH</h2>
+            <p class="section-subtitle">Our Mission, Vision & Values</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>🎯 Our Mission</h3>
+                    <p>To provide a welcoming place for spiritual exploration, prayer, worship, and growth for people of all ages and backgrounds.</p>
+                    <p>We support people in developing their faith and connecting with God, often through communal activities, counseling, prayer, and fellowship.</p>
+                    
+                    <div class="about-highlight">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">📖 Our Theme</h4>
+                        <ul style="list-style-position: inside; color: var(--text-light); line-height: 2;">
+                            <li>Communal worship and spiritual growth</li>
+                            <li>Spiritual exploration and discipleship</li>
+                            <li>Prayer, counseling, and healing</li>
+                            <li>Multi-denominational openness</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3>💎 Our Values</h3>
+                    <p><strong>Spiritual Growth:</strong> Helping believers grow deeper in faith through teaching, prayer, and community.</p>
+                    <p><strong>Community & Fellowship:</strong> Emphasis on a warm, sociable environment where people connect.</p>
+                    <p><strong>Support & Service:</strong> Assisting people through counseling, prayer meetings, and social events.</p>
+                    <p><strong>Inclusivity:</strong> Encouraging people of all ages and backgrounds to learn and participate.</p>
+
+                    <div class="about-highlight">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">✝️ Our Beliefs</h4>
+                        <ul style="list-style-position: inside; color: var(--text-light); line-height: 2;">
+                            <li>God is active and present in our lives</li>
+                            <li>Prayer is central to Christian life</li>
+                            <li>Every believer has a personal spiritual journey</li>
+                            <li>Community matters — worship together</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anointed Section -->
+    <section class="anointed-section">
+        <div class="container">
+            <h2>Meet Our Anointed</h2>
+            <div class="anointed-profile">
+                <h3>Anointed GODFAME</h3>
+                <div class="anointed-bio">
+                    "Anointed to lead, teach, and inspire spiritual growth in our community."
+                </div>
+                <p style="margin-top: 1.5rem; color: var(--text-light); line-height: 1.8;">
+                    Anointed GODFAME is a dedicated spiritual leader committed to guiding our congregation through prayer, teaching, and pastoral care. With a heart for spiritual growth and community service, Anointed GODFAME leads GODFAME CHURCH with passion and dedication, ensuring that every member experiences the love and presence of God.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-subtitle">Join us for worship and spiritual growth</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🙏 Sunday Service</h3>
+                    <p>Join our main worship service filled with praise, worship, and powerful messages of hope and spiritual growth.</p>
+                    <div class="service-time">SUNDAY - 8:00 AM</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>📚 mid week crusade</h3>
+                    <p>Deep dive into Scripture and intercede together as a community, strengthening our faith and connection with God.</p>
+                    <div class="service-time">WEDNESDAY - 4:00 PM</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>👨‍👩‍👧‍👦 Family Ministry</h3>
+                    <p>Special programs for children, youth, and families to grow together in faith and build meaningful relationships.</p>
+                    <div class="service-time">Various Times</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>🤝 Counseling & Support</h3>
+                    <p>anointed counseling and prayer support for those facing challenges, seeking guidance, or in need of spiritual direction.</p>
+                    <div class="service-time">Tuesdays - 9:00am</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>🎵 Worship & Fellowship</h3>
+                    <p>Experience uplifting worship, warm fellowship, and authentic community with brothers and sisters in Christ.</p>
+                    <div class="service-time">All Services</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>💝 Community Outreach</h3>
+                    <p>Serving our community through acts of service, charity, and compassion, living out our faith in action.</p>
+                    <div class="service-time">Ongoing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sermons Section -->
+    <section class="sermons" id="sermons">
+        <div class="container">
+            <h2>Sermon Library</h2>
+            <p class="section-subtitle">Listen to inspiring messages from Pastor GODFAME</p>
+            
+            <div class="sermon-grid">
+                <div class="sermon-card">
+                    <div class="sermon-thumbnail">🎙️</div>
+                    <div class="sermon-info">
+                        <h4>Faith in Action</h4>
+                        <div class="sermon-date">February 23, 2026</div>
+                        <p class="sermon-description">Discover how living faith through action transforms lives and strengthens our community.</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9rem;">Listen Now</a>
+                    </div>
+                </div>
+
+                <div class="sermon-card">
+                    <div class="sermon-thumbnail">📖</div>
+                    <div class="sermon-info">
+                        <h4>Grace and Mercy</h4>
+                        <div class="sermon-date">February 16, 2026</div>
+                        <p class="sermon-description">Explore the depth of God's grace and how mercy reshapes our relationships and faith journey.</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9rem;">Listen Now</a>
+                    </div>
+                </div>
+
+                <div class="sermon-card">
+                    <div class="sermon-thumbnail">✨</div>
+                    <div class="sermon-info">
+                        <h4>UR BLEST - The Power of Blessing</h4>
+                        <div class="sermon-date">February 9, 2026</div>
+                        <p class="sermon-description">Understanding how God's blessings flow through our lives and how we can be blessings to others.</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.9rem;">Listen Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Member Testimonies</h2>
+            <p class="section-subtitle">Stories of faith, healing, and transformation</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">GODFAME CHURCH has become my spiritual home. The love, support, and genuine fellowship I've found here have transformed my faith journey in ways I never imagined.</p>
+                    <div class="testimonial-author">— Sister Grace</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">anointed GODFAME's anointed teaching and the caring community have helped me overcome my darkest moments. I'm blessed beyond measure to be part of this congregation.</p>
+                    <div class="testimonial-author">— Brother David</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">My entire family has found healing and renewed faith through the prayers, counseling, and loving community at GODFAME CHURCH. We are truly blessed!</p>
+                    <div class="testimonial-author">— Sister Mary & Family</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">The multi-denominational approach here makes everyone feel welcome. I've grown so much spiritually, and the prayer support during difficult times has been amazing.</p>
+                    <div class="testimonial-author">— Brother John</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Coming to GODFAME CHURCH was the best decision I made. The worship is vibrant, the teaching is powerful, and the love shown by the congregation is genuine and unconditional.</p>
+                    <div class="testimonial-author">— Sister Angela</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">I came as a seeker and found a home. The church's commitment to spiritual exploration and growth has opened my eyes to God's active presence in my life every day.</p>
+                    <div class="testimonial-author">— Brother Samuel</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events" id="events">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <p class="section-subtitle">Stay updated with our latest activities and special programs</p>
+            
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-date">🗓️ March 2, 2026</div>
+                    <div class="event-title">Sunday Worship Service</div>
+                    <div class="event-description">Join us for our regular Sunday worship service. Experience uplifting worship, inspiring messages, and warm fellowship. <strong>Time: 8:00 AM</strong></div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">🗓️ March 5, 2026</div>
+                    <div class="event-title">Wednesday Bible Study & Prayer</div>
+                    <div class="event-description">Deep-dive into Scripture through Bible study followed by a powerful prayer session. <strong>Time: 4:00 PM</strong></div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">🗓️ March 9, 2026</div>
+                    <div class="event-title">Sunday Worship Service</div>
+                    <div class="event-description">Join us for our regular Sunday worship service. Experience uplifting worship, inspiring messages, and warm fellowship. <strong>Time: 8:00 AM</strong></div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">🗓️ March 12, 2026</div>
+                    <div class="event-title">Youth Fellowship & Mentoring</div>
+                    <div class="event-description">Special youth program featuring music, drama, mentorship sessions, and spiritual growth activities. <strong>Time: 4:00 PM</strong></div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">🗓️ March 19, 2026</div>
+                    <div class="event-title">Community Service & Outreach</div>
+                    <div class="event-description">Join us as we serve our community through charitable work, visiting the sick, and spreading God's love. <strong>Time: 10:00 AM</strong></div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">🗓️ March 25, 2026</div>
+                    <div class="event-title">Prayer & Fasting Week</div>
+                    <div class="event-description">A week-long spiritual discipline focusing on prayer, fasting, intercession, and deepening our connection with God.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="section-subtitle">We'd love to hear from you and answer your questions</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📍 Location</h3>
+                    <div class="contact-info">
+                        ONITSHA<br>
+                        ANAMBRA STATE<br>
+                        NIGERIA
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📞 Phone</h3>
+                    <div class="contact-info">
+                        <a href="tel:07060555561" style="color: var(--secondary-color); text-decoration: none;">07060555561</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <div class="contact-info">
+                        <a href="mailto:godfame3@gmail.com" style="color: var(--secondary-color); text-decoration: none;">godfame3@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--secondary-color);">Send us a Message</h3>
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook">f</a>
+                <a href="https://twitter.com" target="_blank" class="social-btn" title="Twitter">𝕏</a>
+                <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram">📷</a>
+                <a href="https://youtube.com" target="_blank" class="social-btn" title="YouTube">▶</a>
+                <a href="https://whatsapp.com" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 GODFAME CHURCH. All rights reserved.</p>
+        <p>📍 Onitsha, Anambra State, Nigeria</p>
+        <p>🙏 <strong>"UR BLEST"</strong> - A welcoming place for spiritual growth and community worship</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Create mailto link
+            const mailtoLink = `mailto:godfame3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+            
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            event.target.reset();
+            alert('Thank you for your message! We will get back to you soon.');
+        }
+
+        // Scroll-to-top functionality (optional enhancement)
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
